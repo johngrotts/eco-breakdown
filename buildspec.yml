@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - mvn install
+    finally:
+      - echo This always runs even if the install command fails
+artifacts:
+  files:
+    - target/economic-breakdown-0.0.1-SNAPSHOT.war
+  discard-paths: yes
